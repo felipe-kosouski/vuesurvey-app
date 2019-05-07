@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-app>
+      <app-header app></app-header>
+      <v-content>
+        <v-container fluid>
+          <app-content></app-content>
+        </v-container>
+      </v-content>
+      <app-footer app></app-footer>
+    </v-app>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import appHeader from './components/layout/Header.vue'
+import appFooter from './components/layout/Footer.vue'
+import appContent from './components/layout/Content.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    appHeader,
+    appFooter,
+    appContent
   }
 }
 </script>
@@ -23,6 +34,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
